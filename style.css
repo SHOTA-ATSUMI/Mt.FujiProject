@@ -1,0 +1,16 @@
+table{
+    width: 700px;
+    height: 500px;
+    
+}
+
+h1{
+    color: rgb(120, 44, 207);
+    font-size: 45px;
+}
+
+
+button{
+    width: 100px;
+    height: 50px;
+}
