@@ -1,0 +1,22 @@
+li{
+    margin-bottom: 5px;
+    font-size: 140%;
+}
+
+.gameImg{
+    height: 40%;
+    width: 40%;
+}
+
+#nameDiv{
+    text-align: right;
+}
+
+#name{
+    font-size: 150%;
+}
+
+#profileImg{
+    height: 10%;
+    width: 10%;
+}

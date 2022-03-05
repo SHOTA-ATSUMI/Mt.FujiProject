@@ -14,6 +14,10 @@ const table = document.getElementById("table");
 const row = table.rows;
 const cells = table.rows[0].children;
 
+/**
+ * 
+ * @param {number} waitMsec [msec]だけ処理を停止させる
+ */
 function sleep(waitMsec) {
   var startMsec = new Date();
   //waitMsecより大きくなるまでループ
@@ -21,6 +25,11 @@ function sleep(waitMsec) {
 }
 
 //バグ対策（setintervalのタイミングによってはブロック数がずれる）
+/**
+ * 
+ * @param {number} height 何段目の処理か
+ * @param {number} blockNum 想定されるブロックの長さ
+ */
 function checkBlocks(height, blockNum) {
   const checkCells = row[row.length - 1 - height].children;
   let count = 0;
@@ -44,6 +53,10 @@ let level3;
 let level4;
 let level5;
 
+/**
+ * 
+ * @param {number} level 何段目の処理をストップするか
+ */
 function stopInterval(level) {
   switch (level) {
     case 0:
@@ -68,8 +81,13 @@ function stopInterval(level) {
   }
 }
 
+//ゲームスピードの配列格納[[レベル１],[レベル２],[鬼]]
 const speedArray = [[600,500,400,300,250,200],[500,400,300,200,100,50],[200,150,100,50,500,25]]; 
 
+/**
+ * 
+ * @param {number} level 何段目のintervalを開始するか 
+ */
 function startInterval(level) {
   switch (level) {
     case 0:
@@ -108,6 +126,10 @@ function startInterval(level) {
   }
 }
 
+/**
+ * 
+ * @returns {boolean} 山が完成ならtrue
+ */
 function finish() {
   let finishIndex;
   const finishCells = row[0].children;
@@ -153,6 +175,12 @@ document.getElementById("button").onclick = function () {
 
 };
 
+/**
+ * 
+ * @param {number} height 何段目の処理なのか 
+ * @param {number} startIndex 左から何番目のセルをスタートのインデックスとするか
+ * @param {number} length 黒ブロックの長さ
+ */
 function updateColor(height, startIndex, length) {
   if(height < row.length){
 
@@ -225,10 +253,3 @@ setInterval(rotateImgFunc,100);
 //ゲーム開始
 startInterval(height);
 
-
-// let gameFlag = true;
-// while(gameFlag){
-// setColors();
-//sleep(500);
-
-//}
