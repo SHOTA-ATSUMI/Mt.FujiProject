@@ -155,7 +155,7 @@ document.getElementById("button").onclick = function () {
   continueFlag = false;
   //ブロック停止
   stopInterval(height);
-  sleep(1000);
+  //sleep(1000);
 
   //黒ブロック確定
   clearColor();
